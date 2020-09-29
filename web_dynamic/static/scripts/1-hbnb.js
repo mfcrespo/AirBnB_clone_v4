@@ -1,13 +1,15 @@
 $( document ).ready( function() {
-  ameniList = []
-  if($( 'checkbox' ).prop( "checked" ) == true) {
-     ameniList.append('data-id');
-  } else($( 'checkbox' ).prop( "checked" ) == false) {
-     ameniList.remove('data-id');
-  }
-  console.log( ameniList );
+	const amenityList = [];
+	$('input[type=checkbox]').click( function() {
+		if ($(this).prop('checked')) {
+			amenityList.push($(this).attr('data-name'));
+			console.log(amenityList);
+   		}
+    	else {
+			const index = amenityList.indexOf($(this).attr('data-name'));
+			amenityList.splice(index, 1);
+    	}
+		$('.amenities h4').text(amenityList.join(', '));
+	});
 
-  if( ameniList is not []) {
-    $( '.amenities#h4').text(ameniList);
-  }
 });
