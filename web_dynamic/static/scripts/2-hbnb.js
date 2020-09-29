@@ -15,7 +15,6 @@ $( document ).ready( function() {
 
 	$.ajax({
 		url: 'http://localhost:5001/api/v1/status/',
-		dataType: 'text',
 		success: function (data) {
 			if (data.status === 'OK') {
 				$('#api_status').addClass('available');
@@ -23,5 +22,5 @@ $( document ).ready( function() {
 				$('#api_status').removeClass('available');
 			}
 		}
-	}):
+	});
 });
