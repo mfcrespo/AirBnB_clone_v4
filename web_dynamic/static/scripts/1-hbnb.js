@@ -1,5 +1,6 @@
 $( document ).ready( function() {
 	const amenityList = [];
+	$('input[type=checkbox]').css("margin-left", "10px")
 	$('input[type=checkbox]').click( function() {
 		if ($(this).prop('checked')) {
 			amenityList.push($(this).attr('data-name'));
